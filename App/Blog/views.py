@@ -29,7 +29,7 @@ def postview(request):
 #Edit the post element
 def edit(request, pk, template_name='Blog/edit.html'):
     post= get_object_or_404(Post, pk=pk)
-    form = PostForm(request.POST or none, instance=post)
+    form = PostForm(request.POST or None, instance=post)
     if form.is_valid():
         form.save()
         return redirect('index')
